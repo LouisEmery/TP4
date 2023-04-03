@@ -15,6 +15,7 @@ class Balle:
         self.change_y=change_y
         self.rayon=rayon
         self.color=color
+    #change la position de la balle 60 fois par secondes
     def update(self):
         #update and what it does
         self.x += self.change_x
@@ -42,6 +43,7 @@ class Rect:
         self.hauteur=hauteur
         self.color = color
         self.angle=angle
+    #changes the rectangles position 60 times per second
     def update2(self):
         #rectangle updates
         self.x2 += self.change_x2
@@ -82,7 +84,7 @@ class MyGame(arcade.Window):
 
 
     def on_draw(self):
-        #drwas everything when button is pressed
+        #draws everything when button is pressed
         arcade.start_render()
         for balle in self.list_cercle:
             balle.draw()
@@ -90,7 +92,7 @@ class MyGame(arcade.Window):
             rect.draw2()
 
     def on_mouse_press(self, x: int, y: int, button: int, modifiers: int):
-        #when abutton is pressed(left = ball and right = rectangel)
+        #when abutton is pressed(left = ball and right = rectangle)
         if button == arcade.MOUSE_BUTTON_LEFT:
             #create ball and store it in the list
             balle = Balle(x,y,3,3,random.randint(10,30),random.choice(COLORS))
