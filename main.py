@@ -81,7 +81,8 @@ class MyGame(arcade.Window):
         for Rect in self.list_rectangles:
             Rect.update2()
 
-
+    def setup(self):
+        pass
 
     def on_draw(self):
         #draws everything when button is pressed
